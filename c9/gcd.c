@@ -2,9 +2,10 @@
 
 int gcd(int a, int b)
 {
+  int temp;
   while (b != 0)
   {
-    int temp = b;
+    temp = b;
     b = a % b;
     a = temp;
   }
@@ -23,6 +24,6 @@ int main(void)
   int a, b;
   printf("Enter two number: ");
   scanf("%d %d", &a, &b);
-  printf("GCD of %d %d: %d\n", a, b, gcd1(a, b));
+  printf("GCD of %d %d: %d\n", a, b, gcd(a, b));
   return 0;
 }
