@@ -1,8 +1,10 @@
+#include <stdio.h>
+
 int read_line(char str[], int n)
 {
   int ch, i = 0;
 
-  while ((ch = getchar()) != '\n')
+  while ((ch = getchar()) != '\n' && ch != EOF)
   {
     if (i < n)
     {
@@ -11,4 +13,9 @@ int read_line(char str[], int n)
   }
   str[i] = '\0';
   return i;
+}
+
+int main(int argc, char const *argv[])
+{
+  return 0;
 }
