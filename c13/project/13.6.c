@@ -4,7 +4,7 @@
 
 #define NUM_PLANETS 9
 
-char *ToUp( char* );
+char *strupr(char *str);
 
 int main(int argc, char *argv[])
 {
@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
   {
     for (j = 0; j < NUM_PLANETS; j++)
     {
-      if (strcmp(ToUp(argv[i]), ToUp(planets[j])) == 0)
+      if (strcmp(strupr(argv[i]), strupr(planets[j])) == 0)
       {
         printf("%s is planet %d\n", argv[i], j + 1);
         break;
@@ -39,12 +39,10 @@ int main(int argc, char *argv[])
   return 0;
 }
 
-char *ToUp(char *p)
+char *strupr(char *str)
 {
-  while (*p)
-  {
-    *p = toupper(*p);
-    p++;
-  }
-  return p;
+  char *orign = str;
+  for (; *str != '\0 '; str++)
+    *str = toupper(*str);
+  return orign;
 }
