@@ -2,3 +2,6 @@
 !*/
 !*.c
 !*.cpp
+!*.txt
+!*.h
+!Makefile
